@@ -5,26 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 13:33:36 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/19 19:55:28 by nbardavi         ###   ########.fr       */
+/*   Created: 2024/03/21 18:49:14 by nbardavi          #+#    #+#             */
+/*   Updated: 2024/03/21 19:54:32 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/phone.hpp"
+#include "../include/Harl.class.hpp"
 
-int main(void){
-	PhoneBook book;
-	std::string input;
-
-	while(1)
-	{
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			book.Add();
-		else if (input == "SEARCH")
-			book.Search();
-		else if (input == "EXIT")
-			break;
-	}
-	return(0);
+int	main( void ){
+	Harl theRealHarl;
+	theRealHarl.complain("DEBUG");
+	theRealHarl.complain("INFO");
+	theRealHarl.complain("WARNING");
+	theRealHarl.complain("ERROR");
+	theRealHarl.complain("Zlll");
+	return (0);
 }

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 18:49:14 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/21 19:34:17 by nbardavi         ###   ########.fr       */
+/*   Created: 2024/03/15 15:34:31 by nbardavi          #+#    #+#             */
+/*   Updated: 2024/03/21 18:55:48 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Harl.class.hpp"
+#ifndef HARL_CLASS_HPP
+# define HARL_CLASS_HPP
 
-int	main( void ){
-	Harl theRealHarl;
-	theRealHarl.complain("DEBUG");
-	theRealHarl.complain("INFO");
-	theRealHarl.complain("WARNING");
-	theRealHarl.complain("ERROR");
-	return (0);
-}
+#include <string>
+#include <iostream>
+
+class Harl {
+public:
+	Harl();
+	~Harl();
+	void	complain( std::string level );
+
+private:
+	void	debug( void );
+	void	info( void );
+	void	warning( void );
+	void	error( void );
+};
+
+#endif

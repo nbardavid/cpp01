@@ -6,11 +6,10 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:57:14 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/21 14:59:47 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:38:38 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/move.hpp"
 #include "../include/colors.h"
 #include <string>
 #include <iostream>
@@ -18,7 +17,7 @@
 
 void secure(int argc){
 	if (argc < 4){
-		std::cout << Color::RED << "Too few arguments" << std::endl;
+		std::cout << Color::RED << "Too few arguments" << Color::RESET << std::endl;
 		exit (EXIT_FAILURE);
 	}
 }
@@ -29,13 +28,13 @@ int main( int argc, char **argv ){
 	secure(argc);
 	std::ifstream inFile(argv[1]);
 	if (!inFile){
-		std::cerr << Color::RED << "Error opening file : " << argv[1] << std::endl;
+		std::cerr << Color::RED << "Error opening file : " << argv[1] << Color::RESET << std::endl;
 		exit(EXIT_FAILURE);
 	}
 
 	std::ofstream outFile("Outfile");
 	if (!outFile){
-		std::cerr << Color::RED << "Error opening file : Outfile" << std::endl;
+		std::cerr << Color::RED << "Error opening file : Outfile" << Color::RESET << std::endl;
 		exit(EXIT_FAILURE);
 	}
 

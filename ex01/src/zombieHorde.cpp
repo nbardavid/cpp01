@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 18:21:52 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/20 18:25:52 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:37:55 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ Zombie* Zombie::zombieHorde( int N, std::string name ){
 	for (int i = 0; i < N; i++){
 		zombieHorde[i].setName(name);
 	}
-	std::cout << Color::GREEN << "A horde of " << N << " " << name << " come back to life !" << std::endl;
+	std::cout << Color::GREEN << "A horde of " << N << " " << name << " come back to life !" << Color::RESET << std::endl;
 	return (zombieHorde);
 }

@@ -2,9 +2,9 @@ CXX=g++
 CXXFLAGS=-std=c++98 -Wall -Wextra -Werror
 SRCDIR=src
 OBJDIR=obj
-SRCS=$(SRCDIR)/main.cpp
+SRCS=$(SRCDIR)/main.cpp $(SRCDIR)/Harl.class.cpp
 OBJS=$(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
-TARGET=phonebook
+TARGET=Harl
 
 GREEN = \033[38;2;4;231;98m
 BLUE = \033[38;2;119;166;182m
