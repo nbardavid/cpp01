@@ -5,26 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 13:33:36 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/19 19:55:28 by nbardavi         ###   ########.fr       */
+/*   Created: 2024/03/21 11:57:14 by nbardavi          #+#    #+#             */
+/*   Updated: 2024/03/21 14:59:47 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/phone.hpp"
+#include "../include/move.hpp"
+#include "../include/colors.h"
+#include <string>
+#include <iostream>
+#include <fstream>
 
-int main(void){
-	PhoneBook book;
-	std::string input;
-
-	while(1)
-	{
-		std::getline(std::cin, input);
-		if (input == "ADD")
-			book.Add();
-		else if (input == "SEARCH")
-			book.Search();
-		else if (input == "EXIT")
-			break;
+void secure(int argc){
+	if (argc < 4){
+		std::cout << Color::RED << "Too few arguments" << std::endl;
+		exit (EXIT_FAILURE);
 	}
-	return(0);
+}
+
+int main( int argc, char **argv ){
+	size_t index = 0;
+
+	secure(argc);
+	std::ifstream inFile(argv[1]);
+	if (!inFile){
+		std::cerr << Color::RED << "Error opening file : " << argv[1] << std::endl;
+		exit(EXIT_FAILURE);
+	}
+
+	std::ofstream outFile("Outfile");
+	if (!outFile){
+		std::cerr << Color::RED << "Error opening file : Outfile" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+
+	std::string s1 = argv[2];
+	std::string s2 = argv[3];
+	
+	std::string line;
+	std::string templine1;
+	std::string templine2;
+	while(std::getline(inFile, line)){
+		index = 0;
+		while((index = line.find(s1, index)) != std::string::npos){
+			templine1 = line.substr(0, index);
+			templine2 = line.substr(index + s1.length(), line.length());
+			line = templine1 + s2 + templine2;
+			index += s2.length();
+		}
+		outFile << line << std::endl;
+	}
 }

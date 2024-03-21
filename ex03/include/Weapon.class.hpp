@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:07:49 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/20 19:10:21 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/21 10:51:03 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 
 class Weapon{
 private:
+	std::string type;
 public:
-	Weapon( void );
+	const std::string&	getType();
+	void	setType( std::string newType);
+	Weapon( const std::string weapon );
+	Weapon& operator=( const Weapon& other );
 	~Weapon( void );
 };
 

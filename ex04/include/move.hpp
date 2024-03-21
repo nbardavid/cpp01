@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.class.cpp                                   :+:      :+:    :+:   */
+/*   move.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 19:07:51 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/21 10:18:59 by nbardavi         ###   ########.fr       */
+/*   Created: 2024/03/15 15:34:31 by nbardavi          #+#    #+#             */
+/*   Updated: 2024/03/21 11:58:26 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/HumanA.class.hpp"
-#include "../include/Weapon.class.hpp"
+#ifndef MOVE_HPP
+# define MOVE_HPP
+
+#include <algorithm>
+#include <cctype>
+#include <cstring>
+#include <string>
+#include <sstream>
+#include <iomanip>
 #include <iostream>
 
-HumanA::HumanA(const std::string name, const Weapon &weapon ) : weapon(weapon){
-	this->name = name;
-}
-
-HumanA::~HumanA(){
-}
-
-void HumanA::attack(){
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
-}
+#endif

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phone.hpp                                          :+:      :+:    :+:   */
+/*   colors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/15 15:34:31 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/19 20:08:04 by nbardavi         ###   ########.fr       */
+/*   Created: 2024/03/20 16:54:24 by nbardavi          #+#    #+#             */
+/*   Updated: 2024/03/20 16:54:51 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_HPP
-# define PHONE_HPP
+#ifndef COLORS_H
+#define COLORS_H
 
-#include <algorithm>
-#include <cctype>
-#include <cstring>
 #include <string>
-#include <sstream>
-#include <iomanip>
-#include <iostream>
-#include "Contact.class.hpp"
-#include "PhoneBook.class.hpp"
+
+namespace Color {
+    const std::string RESET = "\033[0m";
+    const std::string RED = "\033[31m";
+    const std::string GREEN = "\033[32m";
+    const std::string YELLOW = "\033[33m";
+    const std::string BLUE = "\033[34m";
+}
 
 #endif
