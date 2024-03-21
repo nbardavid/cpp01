@@ -1,10 +1,10 @@
 CXX=g++
-CXXFLAGS=-std=c++98 -Wall -Wextra -Werror
+CXXFLAGS=-std=c++98
 SRCDIR=src
 OBJDIR=obj
 SRCS=$(SRCDIR)/main.cpp $(SRCDIR)/Harl.class.cpp
 OBJS=$(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
-TARGET=Harl
+TARGET=HarlFilter
 
 GREEN = \033[38;2;4;231;98m
 BLUE = \033[38;2;119;166;182m

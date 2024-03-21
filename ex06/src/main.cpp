@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:49:14 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/21 19:34:17 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/21 21:49:23 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 int	main( void ){
 	Harl theRealHarl;
-	theRealHarl.complain("DEBUG");
-	theRealHarl.complain("INFO");
-	theRealHarl.complain("WARNING");
-	theRealHarl.complain("ERROR");
+	theRealHarl.filter("DEBUG");
+	std::cout << std::endl;
+	theRealHarl.filter("INFO");
+	std::cout << std::endl;
+	theRealHarl.filter("WARNING");
+	std::cout << std::endl;
+	theRealHarl.filter("ERROR");
 	return (0);
 }

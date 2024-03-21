@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:49:13 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/21 19:40:42 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/21 21:48:37 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,26 @@ void Harl::error( void ){
 	std::cout << Color::RED << "This is unacceptable ! I want to speak to the manager now." << Color::RESET << std::endl;
 }
 
-void Harl::complain( std::string level ){
-	void (Harl::*complains[4])( void ) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+int Harl::getLevelNumber(const std::string& LevelStr){
+	if (LevelStr == "DEBUG") return (DEBUG_LEVEL);
+	if (LevelStr == "INFO") return (INFO_LEVEL);
+	if (LevelStr == "WARNING") return (WARNING_LEVEL);
+	if (LevelStr == "ERROR") return (ERROR_LEVEL);
+	return (UNKNOW_LEVEL);
+}
 
-	for (int i = 0; i < 4; i++){
-		if (level == levels[i]){
-			(this->*complains[i])();
-			return;
-		}
+void Harl::filter( std::string level ){
+	switch ( this->getLevelNumber(level) ){
+		case DEBUG_LEVEL:
+			this->debug();
+		case INFO_LEVEL:
+			this->info();
+		case WARNING_LEVEL:
+			this->warning();
+		case ERROR_LEVEL:
+			this->error();
+			break;
+		default:
+			std::cerr << Color::RED << "Error: There is no " << level << " level" << Color::RESET << std::endl;
 	}
-	std::cerr << Color::RED << "Error: There is no " << level << " level" << Color::RESET ;
 }
