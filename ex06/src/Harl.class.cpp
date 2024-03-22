@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:49:13 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/21 21:48:37 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/22 10:16:34 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,14 @@ int Harl::getLevelNumber(const std::string& LevelStr){
 void Harl::filter( std::string level ){
 	switch ( this->getLevelNumber(level) ){
 		case DEBUG_LEVEL:
-			this->debug();
+			this->debug();			
+			__attribute__ ((fallthrough));
 		case INFO_LEVEL:
 			this->info();
+			__attribute__ ((fallthrough));
 		case WARNING_LEVEL:
 			this->warning();
+			__attribute__ ((fallthrough));
 		case ERROR_LEVEL:
 			this->error();
 			break;

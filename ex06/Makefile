@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-std=c++98
+CXXFLAGS=-std=c++98 -Wall -Wextra -Werror
 SRCDIR=src
 OBJDIR=obj
 SRCS=$(SRCDIR)/main.cpp $(SRCDIR)/Harl.class.cpp

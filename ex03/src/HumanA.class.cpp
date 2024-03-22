@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:07:51 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/21 19:47:32 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/03/22 11:09:47 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 #include "../include/colors.h"
 #include <iostream>
 
-HumanA::HumanA(const std::string name, const Weapon &weapon ) : weapon(weapon){
-	this->name = name;
+HumanA::HumanA(const std::string _name, Weapon &weapon ) : _weapon(&weapon){
+	this->_name = _name;
 }
 
 HumanA::~HumanA(){
 }
 
 void HumanA::attack(){
-	if (this->weapon.getType().empty() == true){
-		std::cerr << Color::RED << this->name << "can't attack, he does not have any weapon" << Color::RESET << std::endl;
+	if (this->_weapon == NULL){
+		std::cerr << Color::RED << this->_name << "can't attack, he does not have any weapon" << Color::RESET << std::endl;
 		return;
 	}
-	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
 }

@@ -1,5 +1,5 @@
 CXX=g++
-CXXFLAGS=-std=c++98 -Wall -Wextra -Werror
+CXXFLAGS=-std=c++98 -Wall -Wextra -Werror -g
 SRCDIR=src
 OBJDIR=obj
 SRCS=$(SRCDIR)/main.cpp $(SRCDIR)/Weapon.class.cpp $(SRCDIR)/HumanB.class.cpp $(SRCDIR)/HumanA.class.cpp
