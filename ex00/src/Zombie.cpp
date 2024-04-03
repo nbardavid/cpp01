@@ -6,7 +6,7 @@
 /*   By: nbardavi <nbabardavid@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:03:28 by nbardavi          #+#    #+#             */
-/*   Updated: 2024/03/21 19:39:57 by nbardavi         ###   ########.fr       */
+/*   Updated: 2024/04/03 09:28:40 by nbardavi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 Zombie::Zombie( const std::string& name ){
 	this->name = name;
-	std::cout << Color::GREEN << name << ": Came back to life" << Color::RESET << std::endl;
+	std::cout << GREEN << name << ": Came back to life" << RESET << std::endl;
 }
 
 Zombie::~Zombie( void ){
-	std::cout << Color::RED << this->name << ": Died again" << Color::RESET << std::endl;
+	std::cout << RED << this->name << ": Died again" << RESET << std::endl;
 }
 
 void Zombie::Announce( void ){
-	std::cout << Color::BLUE << name << ": BraiiiiiiinnnzzzZ..." << Color::RESET << std::endl; 
+	std::cout << BLUE << name << ": BraiiiiiiinnnzzzZ..." << RESET << std::endl; 
 }
 
